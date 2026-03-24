@@ -1,0 +1,35 @@
+.test-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  padding: 40px 24px;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.test-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #7f8fff;
+  color: #7f8fff;
+}
+
+.test-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.test-subtitle {
+  font-size: 1rem;
+  color: #8a94b2;
+  margin: 0;
+}
+
