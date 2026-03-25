@@ -21,6 +21,6 @@ export default createModuleFederationConfig({
   manifest: {
     fileName: 'mf-manifest.json',
   },
-  remoteType: "global"
-  // getPublicPath: `function() { return "https://remote-cw7z-cetg2m268-axius-projects.vercel.app/" }`
+  remoteType: "global",
+  getPublicPath: `function() { return "https://remote-cw7z-cetg2m268-axius-projects.vercel.app/" }`
 });
