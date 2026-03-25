@@ -6,8 +6,8 @@ import moduleFederationConfig from './module-federation.config';
 export default defineConfig({
   plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
   output: {
-    assetPrefix: process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
+    assetPrefix: process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
         : '/'
   },
   server: {
