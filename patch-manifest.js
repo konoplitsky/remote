@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 
-const PUBLIC_PATH = 'https://remote-cw7z-cetg2m268-axius-projects.vercel.app/';
+const PUBLIC_PATH = 'https://remote-cw7z.vercel.app/';
 const manifest = JSON.parse(readFileSync('./dist/mf-manifest.json', 'utf-8'));
 
 manifest.metaData.publicPath = PUBLIC_PATH;
