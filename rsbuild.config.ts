@@ -6,9 +6,7 @@ import moduleFederationConfig from './module-federation.config';
 export default defineConfig({
   plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
   output: {
-    assetPrefix: process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : '/'
+    assetPrefix: 'https://remote-cw7z-cetg2m268-axius-projects.vercel.app/'
   },
   server: {
     port: 3001
