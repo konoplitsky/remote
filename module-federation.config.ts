@@ -17,5 +17,8 @@ export default createModuleFederationConfig({
   },
   bridge: {
     enableBridgeRouter: true
+  },
+  manifest: {
+    fileName: 'mf-manifest.json',
   }
 });
