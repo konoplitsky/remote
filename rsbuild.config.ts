@@ -9,6 +9,6 @@ export default defineConfig({
     assetPrefix: 'https://remote-cw7z-cetg2m268-axius-projects.vercel.app'
   },
   server: {
-    port: 3001,
-  },
+    port: 3001
+  }
 });
