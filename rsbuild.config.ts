@@ -6,7 +6,7 @@ import moduleFederationConfig from './module-federation.config';
 export default defineConfig({
   plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
   output: {
-    assetPrefix: "auto"
+    assetPrefix: "auto",
   },
   server: {
     port: 3001

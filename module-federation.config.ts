@@ -9,7 +9,7 @@ export default createModuleFederationConfig({
   shared: {
     react: { singleton: true, requiredVersion: '^18.3.1', eager: true },
     'react-dom': { singleton: true, requiredVersion: '^18.3.1', eager: true },
-    '@happycode-core/counter-store': { singleton: true }
+    // '@happycode-core/counter-store': { singleton: true }
   },
   shareStrategy: 'version-first',
   dts: {
