@@ -11,6 +11,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/remote", "destination": "/index.html" },
+    { "source": "/remote/(.*)", "destination": "/index.html" }
   ]
 }
