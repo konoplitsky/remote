@@ -1,24 +1,6 @@
 import { createModuleFederationConfig } from '@module-federation/rsbuild-plugin';
 
-const normalizePublicUrl = (value?: string) => {
-  if (!value) {
-    return undefined;
-  }
-
-  const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
-
-  return withProtocol.replace(/\/+$/, '');
-};
-
-const publicUrl = normalizePublicUrl(
-  process.env.REMOTE_PUBLIC_URL
-  ?? process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ?? process.env.VERCEL_URL
-);
-
-const publicPathExpression = publicUrl
-  ? `function() { return ${JSON.stringify(`${publicUrl}/`)}; }`
-  : `function() { return "auto"; }`;
+const publicPath = "function() { return \"https://remote-cw7z.vercel.app/\"; }"
 
 export default createModuleFederationConfig({
   name: 'remote',
@@ -29,7 +11,7 @@ export default createModuleFederationConfig({
   shared: {
     react: { singleton: true, requiredVersion: '^18.3.1', eager: true },
     'react-dom': { singleton: true, requiredVersion: '^18.3.1', eager: true },
-    // '@happycode-core/counter-store': { singleton: true }
+    '@happycode-core/counter-store': { singleton: true }
   },
   shareStrategy: 'version-first',
   dts: {
@@ -42,5 +24,5 @@ export default createModuleFederationConfig({
     fileName: 'mf-manifest.json',
   },
   remoteType: "global",
-  getPublicPath: publicPathExpression
+  getPublicPath: publicPath
 });
