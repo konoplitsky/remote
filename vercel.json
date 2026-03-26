@@ -9,9 +9,5 @@
         { "key": "Access-Control-Allow-Headers", "value": "*" }
       ]
     }
-  ],
-  "rewrites": [
-    { "source": "/remote", "destination": "/index.html" },
-    { "source": "/remote/(.*)", "destination": "/index.html" }
   ]
 }
