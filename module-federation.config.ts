@@ -1,6 +1,24 @@
 import { createModuleFederationConfig } from '@module-federation/rsbuild-plugin';
 
-const publicPath = "function() { return \"https://remote-cw7z.vercel.app/\"; }"
+const normalizePublicUrl = (value?: string) => {
+  if (!value) {
+    return undefined;
+  }
+
+  const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
+
+  return withProtocol.replace(/\/+$/, '');
+};
+
+const publicUrl = normalizePublicUrl(
+  process.env.REMOTE_PUBLIC_URL
+  ?? process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ?? process.env.VERCEL_URL
+);
+
+const publicPathExpression = publicUrl
+  ? `function() { return ${JSON.stringify(`${publicUrl}/`)}; }`
+  : `function() { return "auto"; }`;
 
 export default createModuleFederationConfig({
   name: 'remote',
@@ -24,5 +42,5 @@ export default createModuleFederationConfig({
     fileName: 'mf-manifest.json',
   },
   remoteType: "global",
-  getPublicPath: publicPath
+  getPublicPath: publicPathExpression
 });
